@@ -1,0 +1,38 @@
+<%- include partials/_css.ejs %>
+
+<div class="container">
+    <h1>Please submit your request</h1>
+    <form action="/request" method="post">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name" class="col-form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail4" class="col-form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <label for="title" class="col-form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title">
+      </div>
+      <div class="form-group">
+        <label for="description" class="col-form-label">Description</label>
+        <input type="text" class="form-control" id="description" name="description">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-9">
+          <label for="category" class="col-form-label">Category</label>
+          <select id="inputCategory" class="form-control" name="category">
+            <option value="support">Support</option>
+            <option value="hardware">Hardware</option>
+            <option value="software">Software</option>
+            <option value="newstart">New start</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
