@@ -1,0 +1,38 @@
+sudo: false
+language: node_js
+services: mongodb
+cache:
+  yarn: true
+env: 
+matrix:
+  include:
+  - os: linux
+    node_js: '7'
+    env: NODE_ENV=development
+  - os: linux
+    node_js: '7'
+    env: NODE_ENV=production
+  fast_finish: true
+before_install:
+- curl -o- -L https://yarnpkg.com/install.sh | bash
+- export PATH=$HOME/.yarn/bin:$PATH
+- nvm --version
+- node --version
+- npm --version
+- gcc --version
+- g++ --version
+install:
+- NODE_ENV=development yarn
+before_script:
+- npm run lint
+- sleep 5
+script:
+- npm run
+- npm test
+notifications:
+  email:
+  - alex@sysrex.com
+  slack:
+    secure: AKYekjTLqVEBcWjnCZpo1PCQAKFfmk6m0jrZojSBZWhMvF1KfC3cUCFXBnLQ/XT7PlRzpXehla230XUyvQInHEAN21qExpb8DUq7HPMoZqorSN3EtO3Tpgr9+HORIMa6e64v6XWlcKTflCaRSQB1rp3zVo1g2fSJfhXreD6j0hjJVuin9ez7PxLsp9JASKHm5CpBSo9j/7q4p24KAmLjmQGsW35jaG+e6iNqxR8hQyFDpBSept2nkqf8suYPZhHFHylJ5jK/g5nWBOao4ejSI7N+4pFxUwNUL7sg1s7u06X1rA/fctFQomAjsA9hGv/dWS0GBN7i7VB2FMk5Qc2WVs67cEnvLM0IpOgmCHDMORZ8ZcQCiJDmY8qDjzS+SXRxPpBMSjq5c0zyMWgTReYYbDAsgLcqkG03Czl4tbiLwWNlZVc5U5Il5T5yeGbDcKkKp33lkI2WLgGHcYbn+zosvJr0zWerxiXXgdByeSMZsBXcFj6YikFMAYkjGI2/n4iWGD7AkGcsM9G9eG0LUfPORQK43MzYIZYEVDpmemCDl2vJg5mOQx4fQW6oDzulvAJ+gFWbES2JS6f4OwyhDmPMm2bh9QB5qaz9iSAsSNy3OZ0N02XhZKDsmW/8MKsCWcsJXv5RT2nTEZ3NVX+s3hM7cJUlKf3WqhWE/a7+5gKJT6Q=
+git:
+  depth: 10
