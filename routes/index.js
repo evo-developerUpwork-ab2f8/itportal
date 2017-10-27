@@ -17,6 +17,7 @@ router.get('/inventory', inventoryController.inventoryhomePage);
 
 //router.get('/support', supportController.supporthomePage);
 router.get('/support', supportController.getTickets);
+router.get('/editTicket', supportController.editTickets);
 
 router.get('/directory', directoryController.directoryhomePage);
 
