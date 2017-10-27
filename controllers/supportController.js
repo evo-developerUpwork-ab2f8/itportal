@@ -15,3 +15,8 @@ exports.createTickets = async (req, res) => {
   const ticket = await new Ticket(req.body).save();
   res.redirect('/');
 };
+
+exports.editTickets = async (req, res) => {
+  const ticket = await Ticket.findOne({_id: req.params.id});
+  console.log(ticket);
+};
