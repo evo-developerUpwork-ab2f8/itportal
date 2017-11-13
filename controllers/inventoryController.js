@@ -6,7 +6,19 @@ exports.inventoryhomePage = (req, res) => {
 };
 
 
-/* Start Software Licence Controllers */
+/* Start Software Licences Controllers */
+
+// get all software licences list
+exports.softwareList = (req, res, next) => {
+
+  SoftwareLicence.find({})
+    .then(licences => {
+      res.render('software', {licences})
+    })
+    .catch(err => next(err));
+
+};
+
 exports.addSoftwareLicence = (req, res, next) => {
   const {
     software_name, manufacturer,
@@ -44,6 +56,17 @@ exports.softwareLicencePage = (req, res, next) => {
 /* End Software Licence Controllers */
 
 /* Start Hardware Controllers */
+
+// get All Hardware Items
+exports.hardwareItemsList = (req, res, next) => {
+
+  Hardware.find({})
+    .then(hardwareItems => {
+      res.render('hardware', {hardwareItems})
+    })
+    .catch(err => next(err));
+
+};
 
 exports.addHardware = (req, res, next) => {
   const {
