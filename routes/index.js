@@ -17,8 +17,14 @@ router.get('/inventory', inventoryController.inventoryhomePage);
 
 // add new software licence
 router.post('/inventory/softwarelicence/add', inventoryController.addSoftwareLicence);
-// show the software licence page
+// display the software licence page
 router.get('/inventory/softwarelicence/:id', inventoryController.softwareLicencePage);
+
+
+// add new hardware
+router.post('/inventory/hardware/add', inventoryController.addHardware);
+// display the hardware item page
+router.get('/inventory/hardware/:id', inventoryController.hardwareItemPage);
 
 //router.get('/support', supportController.supporthomePage);
 router.get('/support', supportController.getTickets);

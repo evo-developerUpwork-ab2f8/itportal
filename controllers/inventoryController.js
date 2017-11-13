@@ -1,10 +1,12 @@
 const SoftwareLicence = require('../models/SoftwareLicence');
-
+const Hardware = require('../models/Hardware');
 
 exports.inventoryhomePage = (req, res) => {
   res.render('inventory');
 };
 
+
+/* Start Software Licence Controllers */
 exports.addSoftwareLicence = (req, res, next) => {
   const {
     software_name, manufacturer,
@@ -39,3 +41,46 @@ exports.softwareLicencePage = (req, res, next) => {
     })
     .catch(err => next(err));
 };
+/* End Software Licence Controllers */
+
+/* Start Hardware Controllers */
+
+exports.addHardware = (req, res, next) => {
+  const {
+    company, asset_tag,
+    model, status,
+    checkout_to_user,
+    checkout_to_asset,
+    checkout_to_location,
+    serial, asset_name,
+    purchase_date, supplier,
+    order_number, purchase_cost,
+    warranty, notes, img,
+    default_location, requestable
+  } = req.body;
+
+  Hardware.create({
+    company, asset_tag,
+    model, status,
+    checkout_to_user,
+    checkout_to_asset,
+    checkout_to_location,
+    serial, asset_name,
+    purchase_date, supplier,
+    order_number, purchase_cost,
+    warranty, notes, img,
+    default_location, requestable
+  })
+    .then(hardware => res.redirect(`/inventory/hardware/${hardware._id}`))
+    .catch(err => next(err));
+};
+
+exports.hardwareItemPage = (req, res, next) => {
+  Hardware.findById(req.params.id)
+    .then(hardwareItem => {
+      res.render('hardwareItem', {hardwareItem})
+    })
+    .catch(err => next(err));
+};
+
+/* End Hardware Controllers */

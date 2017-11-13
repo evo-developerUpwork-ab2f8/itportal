@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Software hardwareItem</title>
+    <style>
+      div {
+        margin: 100px auto;
+      }
+      ul li {
+        list-style: none;
+        color: blue;
+      }
+      span {
+        font-weight: bolder;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li><span>Company: </span><%= hardwareItem.company %></li><hr />
+        <li><span>Asset Tag: </span><%= hardwareItem.asset_tag %></li><hr />
+        <li><span>Model: </span><%= hardwareItem.model %></li><hr />
+        <li><span>Status: </span><%= hardwareItem.status %></li><hr />
+        <li><span>Checkout To (User): </span><%= hardwareItem.checkout_to_user %></li><hr />
+        <li><span>Checkout To (Asset): </span><%= hardwareItem.checkout_to_asset %></li><hr />
+        <li><span>Checkout To (Location): </span><%= hardwareItem.checkout_to_location %></li><hr />
+        <li><span>Serial: </span><%= hardwareItem.serial %></li><hr />
+        <li><span>Asset Name: </span><%= hardwareItem.asset_name %></li><hr />
+        <li><span>Purchase Date: </span><%= hardwareItem.purchase_date %></li><hr />
+        <li><span>Supplier: </span><%= hardwareItem.supplier %></li><hr />
+        <li><span>Order Number: </span><%= hardwareItem.order_number %></li><hr />
+        <li><span>Purchase Cost: </span><%= hardwareItem.purchase_cost %></li><hr />
+        <li><span>Warranty: </span><%= hardwareItem.warranty %></li><hr />
+        <li><span>Notes: </span><%= hardwareItem.notes %></li><hr />
+        <li><span>Default Location: </span><%= hardwareItem.default_location %></li><hr />
+        <li><span>Requestable: </span><%= hardwareItem.requestable %></li>
+        <li><span>Image: </span><%= hardwareItem.img %></li>
+      </ul>
+    </div>
+  </body>
+</html>
