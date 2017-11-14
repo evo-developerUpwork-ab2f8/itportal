@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./start.js",
-    "dev": "nodemon ./start.js"
+    "dev": "nodemon ./start.js",
+    "lint": "eslint ./start.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
