@@ -6,6 +6,7 @@ const inventoryController = require('../controllers/inventoryController');
 const supportController = require('../controllers/supportController');
 const directoryController = require('../controllers/directoryController');
 const suppliersController = require('../controllers/suppliersController');
+const documentController = require('../controllers/documentController');
 
 /* GET home page. */
 
@@ -51,4 +52,15 @@ router.get('/supplier/:id', suppliersController.getSupplierPage);
 
 /* ================== End Suppliers ================== */
 
+/* ================== Start document ================== */
+
+router.post('/documents/po/add', documentController.addPurchaseOrder);
+
+router.get('/documents/po/:id', documentController.getPurchaseOrder);
+
+router.post('/documents/capex/add', documentController.addCapex);
+
+router.get('/documents/capex/:id', documentController.getCapexPage);
+
+/* ================== End document ================== */
 module.exports = router;
