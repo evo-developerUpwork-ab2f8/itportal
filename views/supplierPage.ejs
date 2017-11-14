@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Software supplier</title>
+    <style>
+      div {
+        margin: 100px auto;
+      }
+      ul li {
+        list-style: none;
+        color: blue;
+      }
+      span {
+        font-weight: bolder;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li><span>Name: </span><%= supplier.name %></li><hr />
+        <li><span>Adress: </span><%= supplier.address %></li><hr />
+        <li><span>City: </span><%= supplier.city %></li><hr />
+        <li><span>State: </span><%= supplier.state %></li><hr />
+        <li><span>Country: </span><%= supplier.country %></li><hr />
+        <li><span>Zip: </span><%= supplier.zip %></li><hr />
+        <li><span>Contact Name: </span><%= supplier.contact_name %></li><hr />
+        <li><span>Phone: </span><%= supplier.phone %></li><hr />
+        <li><span>fax: </span><%= supplier.fax %></li><hr />
+        <li><span>Email: </span><%= supplier.email %></li><hr />
+        <li><span>Url: </span><%= supplier.url %></li><hr />
+        <li><span>Notes: </span><%= supplier.notes %></li><hr />
+        <li><span>Image: </span><%= supplier.img %></li><hr />
+      </ul>
+    </div>
+  </body>
+</html>
