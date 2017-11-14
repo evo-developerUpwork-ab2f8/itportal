@@ -1,4 +1,4 @@
-const SoftwareLicence = require('../models/SoftwareLicence');
+const Software = require('../models/Software');
 const Hardware = require('../models/Hardware');
 
 exports.inventoryhomePage = (req, res) => {
@@ -9,14 +9,9 @@ exports.inventoryhomePage = (req, res) => {
 /* Start Software Licences Controllers */
 
 // get all software licences list
-exports.softwareList = (req, res, next) => {
-
-  SoftwareLicence.find({})
-    .then(licences => {
-      res.render('software', {licences})
-    })
-    .catch(err => next(err));
-
+exports.softwareList = async (req, res, next) => {
+  const software = await Software.find();
+  res.render('software', {software});
 };
 
 exports.addSoftwareLicence = (req, res, next) => {
