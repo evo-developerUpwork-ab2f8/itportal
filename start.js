@@ -12,9 +12,10 @@ mongoose.connection.on('error', (err) => {
 console.log('Connected to DB');
 
 require('./models/Ticket.js');
-require('./models/SoftwareLicence');
 require('./models/Hardware');
 require('./models/Supplier');
+require('./models/Software.js');
+
 
 const app = require('./app');
 app.set('port', process.env.PORT || 7080);

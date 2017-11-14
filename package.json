@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./start.js",
     "dev": "nodemon ./start.js",
+    "test": "mocha --timeout 10000",
     "lint": "eslint ./start.js"
   },
   "dependencies": {
@@ -21,6 +22,9 @@
     "validator": "^9.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.11.0"
+    "chai": "^4.1.2",
+    "eslint": "^4.11.0",
+    "mocha": "^4.0.1",
+    "sinon": "^4.1.2"
   }
 }

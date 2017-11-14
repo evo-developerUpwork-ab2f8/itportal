@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const licenceSchema = new Schema({
+const softwareSchema = new mongoose.Schema ({
   software_name: {
     type: String
   },
@@ -58,4 +57,4 @@ const licenceSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('softwarelicence', licenceSchema);
+module.exports = mongoose.model('software', softwareSchema);
