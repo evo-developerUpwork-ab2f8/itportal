@@ -1,0 +1,70 @@
+<!--
+
+
+  This Page Is For Testing Results
+
+
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Software po</title>
+    <style>
+      div {
+        margin: 100px auto;
+      }
+      ul li {
+        list-style: none;
+        color: blue;
+      }
+      p {
+        color: blue;
+      }
+      span {
+        font-weight: bolder;
+        color: black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li><span>Company: </span><%= po.company %></li><hr />
+        <li><span>Department: </span><%= po.department %></li><hr />
+        <li><span>Purchase Order No: </span><%= po.purchase_order_number %></li><hr />
+        <li><span>Supplier: </span><%= po.supplier %></li><hr />
+        <li><span>Supplier Address: </span><%= po.supplier_address %></li><hr />
+        <li><span>Supplier Contact: </span><%= po.supplier_contact %></li><hr />
+        <li><span>Supplier Reference: </span><%= po.supplier_reference %></li><hr />
+        <li>
+          <div>
+            <ul>
+              <% po.order_items.forEach(function(val){%>
+                <li>
+                  <div width="200px" style='border:1px solid black'>
+                    <p><span>Description: </span><%=val.description%></p>
+                    <p><span>QTY: </span><%=val.description%></p>
+                    <p><span>Unit Pricing: </span><%=val.unit_price%></p>
+                    <p><span>Total: </span><%=val.total%></p>
+                  </div>
+                </li>
+              <%}) %>
+            </ul>
+          </div>
+        </li>
+        <li><span>Page Total: </span><%= po.page_total %></li><hr />
+        <li><span>Postage-Packaging: </span><%= po.postage_packaging %></li><hr />
+        <li><span>Sub-total: </span><%= po.sub_total %></li><hr />
+        <li><span>VAT: </span><%= po.vat %></li><hr />
+        <li><span>Total: </span><%= po.total %></li><hr />
+        <li><span>Employee-Signature-Date: </span><%= po.employee_signature_date %></li><hr />
+        <li><span>Line-Manage-Signature-Date: </span><%= po.line_manage_signature_date %></li><hr />
+        <li><span>Managing-Director-Signature-Date: </span><%= po.managing_director_signature_date %></li><hr />
+        <li><span>Nominal Code: </span><%= po.nominal_code %></li><hr />
+        <li><span>Additional Notes: </span><%= po.additional_notes %></li><hr />
+      </ul>
+    </div>
+  </body>
+</html>

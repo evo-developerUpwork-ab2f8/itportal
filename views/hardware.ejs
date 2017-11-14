@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Software hardwareItem</title>
+    <style>
+      div {
+        margin: 100px auto;
+      }
+      ul li {
+        list-style: none;
+        color: blue;
+      }
+      span {
+        font-weight: bolder;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <% hardwareItems.forEach(function(val){ %>
+          <li>
+            <a href='/inventory/hardware/<%=val._id%>'><%= val.company %></a>
+          </li><hr />
+        <%})%>
+      </ul>
+    </div>
+  </body>
+</html>

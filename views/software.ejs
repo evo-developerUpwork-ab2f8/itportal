@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Software hardwareItem</title>
+    <style>
+      div {
+        margin: 100px auto;
+      }
+      ul li {
+        list-style: none;
+        color: blue;
+      }
+      span {
+        font-weight: bolder;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> Licenses </h1>
+    <div>
+      <ul>
+        <% software.forEach(function(val){ %>
+          <li>
+            <a href='/inventory/softwarelicence/<%=val._id%>'><%= val.software_name %></a>
+          </li><hr />
+        <%})%>
+      </ul>
+    </div>
+  </body>
+</html>
