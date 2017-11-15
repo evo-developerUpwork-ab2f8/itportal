@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const orderItemsSchema = require('./orderItems');
+const orderItemsSchema = require('./OrderItems');
 
 const poSchema = new Schema({
   company: {

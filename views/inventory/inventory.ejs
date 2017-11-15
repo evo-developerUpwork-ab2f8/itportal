@@ -12,7 +12,7 @@
 </head>
 
   <%- include partials/_header.ejs %>
-  <%- include partials/_sidebar_support.ejs %>
+  <%- include partials/_sidebar.ejs %>
 
 <!-- Main content -->
     <main class="main">
@@ -24,11 +24,11 @@
             <div class="col-sm-6 col-lg-3">
               <div class="card text-white bg-primary">
                 <div class="card-body pb-0">
-                  <h4 class="mb-0"><%- ticketsAll %></h4>
+                  <h4 class="mb-0">9.823</h4>
                   <p>Support tickets</p>
                 </div>
-                <div class="chart-wrapper px-3" style="height:10px;">
-                  <canvas id="card-chart1" class="chart" height="10"></canvas>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                  <canvas id="card-chart1" class="chart" height="70"></canvas>
                 </div>
               </div>
             </div>
@@ -40,8 +40,8 @@
                   <h4 class="mb-0">9.823</h4>
                   <p>Hardware requests</p>
                 </div>
-                <div class="chart-wrapper px-3" style="height:10px;">
-                  <canvas id="card-chart2" class="chart" height="10"></canvas>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                  <canvas id="card-chart2" class="chart" height="70"></canvas>
                 </div>
               </div>
             </div>
@@ -55,8 +55,8 @@
                   <h4 class="mb-0">9.823</h4>
                   <p>Software requests</p>
                 </div>
-                <div class="chart-wrapper" style="height:10px;">
-                  <canvas id="card-chart3" class="chart" height="10"></canvas>
+                <div class="chart-wrapper" style="height:70px;">
+                  <canvas id="card-chart3" class="chart" height="70"></canvas>
                 </div>
               </div>
             </div>
@@ -70,8 +70,8 @@
                   <h4 class="mb-0">9.823</h4>
                   <p>New starts</p>
                 </div>
-                <div class="chart-wrapper px-3" style="height:10px;">
-                  <canvas id="card-chart4" class="chart" height="10"></canvas>
+                <div class="chart-wrapper px-3" style="height:70px;">
+                  <canvas id="card-chart4" class="chart" height="70"></canvas>
                 </div>
               </div>
             </div>
@@ -83,34 +83,27 @@
           <div class="card">
             <div class="card-body">
               <div class="row">
-                <div class="col-sm-12">
-                  <h4 class="card-title mb-0">Tickets</h4>
-                  <br>
-                    <table class="table table-bordered table-striped table-hover table-responsive">
-                      <thead class="flip-content">
-                        <tr>
-                          <th>Title</th>
-                          <th>Description</th>
-                          <th>Category</th>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <% for (i in tickets) { %>
-                        <tr>
-                          <td><%= tickets[i].title %></a></td>
-                          <td><%= tickets[i].description %></a></td>
-                          <td><%= tickets[i].category %></a></td>
-                          <td><%= tickets[i].name %></a></td>
-                          <td><%= tickets[i].email %></a></td>
-                          <td><%= tickets[i].status %></a></td>
-                        </tr>
-                        <% } %>
-                      </tbody>
-                    </table>              
+                <div class="col-sm-5">
+                  <h4 class="card-title mb-0">Total Requests</h4>
+                  <div class="small text-muted">November 2017</div>
+                </div>
+                <!--/.col-->
+                <div class="col-sm-7 hidden-sm-down">
+                  <button type="button" class="btn btn-primary float-right"><i class="icon-cloud-download"></i></button>
+                  <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-3" data-toggle="buttons" aria-label="First group">
+                      <label class="btn btn-outline-secondary">
+                        <input type="radio" name="options" id="option1"> Day
+                      </label>
+                      <label class="btn btn-outline-secondary active">
+                        <input type="radio" name="options" id="option2" checked=""> Month
+                      </label>
+                      <label class="btn btn-outline-secondary">
+                        <input type="radio" name="options" id="option3"> Year
+                      </label>
+                    </div>
                   </div>
+                </div>
                 <!--/.col-->
               </div>
               <!--/.row-->

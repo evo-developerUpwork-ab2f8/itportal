@@ -63,5 +63,10 @@ router.post('/documents/capex/add', documentController.addCapex);
 
 router.get('/documents/capex/:id', documentController.getCapexPage);
 
+/* ================== Admin Part =====================*/
+
+router.get('/admin', mainController.adminPage);
+
+
 /* ================== End document ================== */
 module.exports = router;

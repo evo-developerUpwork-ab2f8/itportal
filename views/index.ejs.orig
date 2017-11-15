@@ -267,6 +267,9 @@
     </main>
 
   <%- include partials/_footer.ejs %>
+<<<<<<< HEAD
 
   </body>
 </html>
+=======
+>>>>>>> e185bb244134d897ba5635e1ff834901a1599679

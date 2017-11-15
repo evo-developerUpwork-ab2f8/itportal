@@ -1,3 +1,7 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
 <link rel="stylesheet" href="/stylesheets/font-awesome.min.css" >
+<<<<<<< HEAD
 <link rel="stylesheet" href="/stylesheets/simple-line-icons.min.css">
+=======
+<link rel="stylesheet" href="stylesheets/simple-line-icons.min.css">
+>>>>>>> e185bb244134d897ba5635e1ff834901a1599679
