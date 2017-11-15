@@ -115,5 +115,3 @@ exports.hardwareItemPage = (req, res, next) => {
     })
     .catch(err => next(err));
 };
-
-/* End Hardware Controllers */
