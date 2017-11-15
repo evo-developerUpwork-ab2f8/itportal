@@ -14,7 +14,9 @@ console.log('Connected to DB');
 require('./models/Ticket.js');
 require('./models/Hardware');
 require('./models/Supplier');
-require('./models/Software.js');
+require('./models/Software');
+require('./models/CapitalReq');
+require('./models/PurchaseOrder');
 
 
 const app = require('./app');
