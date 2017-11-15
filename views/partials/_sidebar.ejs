@@ -1,24 +1,79 @@
- <div class="app-body">
+  <div class="app-body">
     <div class="sidebar">
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/"><i class="fa fa-keyboard-o"></i> Dashboard </a>
+            <a class="nav-link" href="/"><i class="icon-speedometer"></i> Dashboard </a>
           </li>
-          </li> <li class="nav-item">
-            <a class="nav-link" href="charts.html"><i class="fa fa-file-text"></i> Reports</a>
+
+          <li class="divider"></li>
+          <li class="nav-title">
+            Areas
           </li>
-          </li> <li class="nav-item">
-            <a class="nav-link" href="charts.html"><i class="fa fa-pie-chart"></i> Reports</a>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="/support"><i class="icon-puzzle"></i> Support</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="components-buttons.html"><i class="icon-puzzle"></i> Tickets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="components-social-buttons.html"><i class="icon-puzzle"></i> Reports</a>
+              </li>
+            </ul>
           </li>
-          </li> <li class="nav-item">
-            <a class="nav-link" href="charts.html"><i class="fa fa-pie-chart"></i> Reports</a>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="/inventory"><i class="icon-note"></i> Inventory</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="forms-basic-forms.html"><i class="icon-note"></i> Basic Forms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="forms-advanced-forms.html"><i class="icon-note"></i> Advanced Forms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="forms-validation.html"><i class="icon-note"></i> Validation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="/documents"><i class="fa fa-code"></i> Documents</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="editors-code-editor.html"><i class="icon-note"></i> Code Editor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="editors-markdown-editor.html"><i class="fa fa-code"></i> Markdown Editor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="editors-text-editors.html"><i class="icon-note"></i> Rich Text Editor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="/directory"><i class="icon-star"></i> Directory</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"><i class="icon-star"></i> Font Awesome <span class="badge badge-secondary">4.7</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons-simple-line-icons.html"><i class="icon-star"></i> Simple Line Icons</a>
+              </li>
+            </ul>
+          </li>
+          <li class="divider"></li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="/admin"><i class="icon-star"></i> Admin</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"><i class="icon-star"></i> Font Awesome <span class="badge badge-secondary">4.7</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons-simple-line-icons.html"><i class="icon-star"></i> Simple Line Icons</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
-      <div class="sidebar-minimizer brand-minimizer">
-        <li class="nav-item" type="button">
-          <a class="nav-link" href="/settings"><i class="fa fa-cog"></i>Settings</a>
-        </li>
-      </div>
+      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
+      <%- include _footer.ejs %>

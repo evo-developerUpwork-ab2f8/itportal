@@ -5,3 +5,7 @@ exports.dashPage = (req, res) => {
 exports.requestPage = (req, res) => {
   res.render('request');
 };
+
+exports.adminPage = (req, res) => {
+  res.render('admin/index');
+};

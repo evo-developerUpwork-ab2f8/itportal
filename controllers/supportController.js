@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const Ticket = mongoose.model('Ticket');
 
 exports.supporthomePage = (req, res) => {
-  res.render('support');
+  res.render('support/support');
 };
 
 exports.getTickets = async (req, res) => {
   const tickets = await Ticket.find();
   const ticketsAll = await Ticket.count();
-  res.render('support', {tickets, ticketsAll});
+  res.render('support/support', {tickets, ticketsAll});
 };
 
 exports.createTickets = async (req, res) => {
