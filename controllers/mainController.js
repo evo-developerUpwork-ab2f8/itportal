@@ -1,9 +1,11 @@
-exports.dashPage = (req, res) => {
-  res.render('index');
-};
+const mongoose = require('mongoose');
+const Ticket = mongoose.model('Ticket');
 
-exports.requestPage = (req, res) => {
-  res.render('request');
+exports.dashPage = async (req, res) => {
+  let page = 1;
+  const tickets = await Ticket.find();
+  const ticketsAll = await Ticket.count();
+  res.render('index', {tickets, ticketsAll, page});
 };
 
 exports.adminPage = (req, res) => {

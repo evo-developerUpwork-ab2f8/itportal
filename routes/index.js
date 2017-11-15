@@ -11,19 +11,6 @@ const documentController = require('../controllers/documentController');
 /* GET home page. */
 router.get('/', mainController.dashPage);
 
-/* GET request page */
-router.get('/request', mainController.requestPage);
-
-/* Add new ticket */
-router.post('/request', supportController.createTickets);
-
-//router.get('/support', supportController.supporthomePage);
-router.get('/editTicket', supportController.editTickets);
-
-
-/* ========================================= Start Support =========================================== */
-router.get('/support', supportController.getTickets);
-/* ========================================= End   Support =========================================== */
 
 
 
@@ -47,15 +34,17 @@ router.get('/inventory/software/:id', inventoryController.softwareLicencePage);
 
 /* =================== Start Hardware ================== */
 // get hardware Items page
+router.get('/inventory', inventoryController.inventoryhomePage);
 router.get('/inventory/hardware', inventoryController.hardwareItemsList);
-// get the add hardware page
-router.get('/inventory/hardware/add', inventoryController.getAddHardware);
-// add new hardware
-router.post('/inventory/hardware/add', inventoryController.addHardware);
-// display the hardware item page
+router.post('/inventory/hardware/add', inventoryController.getaddHardware);
 router.get('/inventory/hardware/:id', inventoryController.hardwareItemPage);
 
-/* =================== End Hardware ================== */
+
+//router.get('/support', supportController.supporthomePage);
+router.get('/support', supportController.getTickets);
+router.get('/support/editTicket', supportController.editTicket);
+router.get('/support/createticket', supportController.viewCreateTicket);
+router.post('/support/createticket', supportController.createTicket);
 
 
 /* =================== Start Suppliers ================== */

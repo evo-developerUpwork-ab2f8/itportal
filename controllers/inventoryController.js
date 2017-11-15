@@ -4,7 +4,7 @@ const Hardware = require('../models/Hardware');
 exports.inventoryhomePage = (req, res, next) => {
   Promise.all([Hardware.find({}), Software.find({})])
     .then(result => {
-      res.render('inventory', {hardware: result[0], software: result[1]});
+      res.render('inventory/inventory', {hardware: result[0], software: result[1]});
     })
     .catch(err => next(err))
 };
