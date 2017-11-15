@@ -1,8 +1,15 @@
+<!--
+
+
+  This Page Is For Testing Results
+
+
+-->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Software hardwareItem</title>
+    <title>Software Licence</title>
     <style>
       div {
         margin: 100px auto;
@@ -18,14 +25,10 @@
     </style>
   </head>
   <body>
-    <h1> Licenses </h1>
     <div>
       <ul>
-        <% software.forEach(function(val){ %>
-          <li>
-            <a href='/inventory/softwarelicence/<%=val._id%>'><%= val.software_name %></a>
-          </li><hr />
-        <%})%>
+        <li><span>company: </span><%= val.company %></li><hr />
+        <li><span>department: </span><%= val.department %></li><hr />
       </ul>
     </div>
   </body>
