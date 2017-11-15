@@ -19,7 +19,7 @@ router.get('/inventory/software/add', inventoryController.getAddSoftwareLicence)
 router.post('/inventory/software/add', inventoryController.addSoftwareLicence);
 router.get('/inventory/software/:id', inventoryController.softwareLicencePage);
 router.get('/inventory/hardware', inventoryController.hardwareItemsList);
-router.post('/inventory/hardware/add', inventoryController.getaddHardware);
+router.post('/inventory/hardware/add', inventoryController.getAddHardware);
 router.get('/inventory/hardware/:id', inventoryController.hardwareItemPage);
 router.get('/inventory/supplier', suppliersController.suppliersList);
 router.get('/inventory/supplier/add', suppliersController.getAddSupplier);
