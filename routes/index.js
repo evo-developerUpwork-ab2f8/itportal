@@ -34,13 +34,13 @@ router.post('/support/createticket', supportController.createTicket);
 
 
 
-router.get('/documents', documentController.allDocuments);
+router.get('/documents', documentController.getDocuments);
 router.get('/documents/purchaseorder', documentController.allPurchaseOrders);
-router.get('/documents/purchaseorder/add', documentController.getAddPurchaseOrder);
+router.get('/documents/purchaseorder/add', documentController.createPurchaseOrder);
 router.post('/documents/purchaseorder/add', documentController.addPurchaseOrder);
 router.get('/documents/purchaseorder/:id', documentController.getPurchaseOrder);
 router.get('/documents/purchaserequest', documentController.allPurchaseRequests);
-router.get('/documents/purchaserequest/add', documentController.getAddCapex);
+router.get('/documents/purchaserequest/add', documentController.createCapex);
 router.post('/documents/purchaserequest/add', documentController.addCapex);
 router.get('/documents/purchaserequest/:id', documentController.getCapexPage);
 

@@ -2,13 +2,12 @@ const PurchaseOrder = require('../models/PurchaseOrder');
 const Capex = require('../models/CapitalReq');
 
 
-// --> get all documents
-exports.allDocuments = (req, res, next) => {
-  Promise.all([PurchaseOrder.find({}), Capex.find({})])
-      .then(result => {
-        res.render('documents', { purchaseOrders: result[0], purchaseRequests: result[0] })
-      })
-      .catch(err => next(err));
+exports.getDocuments = async (req, res) => {
+  const poPromise = await PurchaseOrder.find();
+  const capexPromise = await Capex.find();
+  console.log(Capex);
+  const [po, capex] = await Promise.all([poPromise, capexPromise]);
+  res.render('documents/index', {po, capex});
 };
 
 /* =============================== Start Purchase Order ============================== */
@@ -22,8 +21,8 @@ exports.allPurchaseOrders = (req, res, next) => {
 };
 
 // --> get add po form page
-exports.getAddPurchaseOrder = (req, res, next) => {
-  res.render('addPurchaseOrder');
+exports.createPurchaseOrder = (req, res, next) => {
+  res.render('createPurchaseOrder');
 };
 
 // --> Add a PO
@@ -87,8 +86,8 @@ exports.allPurchaseRequests = (req, res, next) => {
 };
 
 // --> get the add purchase request form page
-exports.getAddCapex = (req, res, next) => {
-  res.render('addCapex');
+exports.createCapex = (req, res, next) => {
+  res.render('createCapex');
 };
 
 exports.addCapex = (req, res, next) => {

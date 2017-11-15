@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="It Portal">
+  <meta name="author" content="openduty">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <%- include ../partials/_css.ejs %>
+</head>
+
+  <%- include ../partials/_header.ejs %>
+  <%- include ../partials/_sidebar.ejs %>
+
+<!-- Main content -->
+    <main class="main">
+    <br>
+    <br>
+      <div class="container-fluid">
+        <div class="animated fadeIn">
+
+          <div class="row">
+            <div class="col-sm-2">
+              <li class="btn btn-sm btn-outline-primary"> <a href="/documents/purchaseorder/add">Create Po</a></li>
+            </div>
+            <div class="col-sm-2">
+              <li class="btn btn-sm btn-outline-primary"> <a href="/documents/purchaserequest/add">Create Capex</a></li>
+            </div>
+          </div>
+
+          <!--/.row-->
+          <br>
+          <br>
+ <div class="row">
+            <div class="col-sm-6">
+              <div class="card border-danger">
+                <div class="card-header text-white bg-danger">
+                  <i class="fa fa-calendar-times-o"></i>
+                  <strong>PO</strong>
+                  <span class="badge badge-pill badge-dark float-right">42</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-body">
+                    <table class="table table-sm">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Summary</th>
+                          <th>Created by</th>
+                          <th>Due date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <% for (i in po) { %>
+                        <tr>
+                          <td>1</a></td>
+                          <td><%= po[i].company %></a></td>
+                          <td><%= po[i].id %></a></td>
+                          <td>10/11/2017</a></td>
+                          <td><%= po[i].status %></a></td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/.col-->                      
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-header">
+                  <i class="fa fa-align-justify"></i>
+                  <strong>Capex</strong>
+                  <span class="badge badge-pill badge-dark float-right">42</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-body">
+                    <table class="table table-sm">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Summary</th>
+                          <th>Created by</th>
+                          <th>Due date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <% for (i in capex) { %>
+                        <tr>
+                          <td>1</a></td>
+                          <td><%= capex[i].company %></a></td>
+                          <td><%= capex[i].id %></a></td>
+                          <td>10/11/2017</a></td>
+                          <td><%= capex[i].status %></a></td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </div>
+                </div>                    
+              </div>
+            </div>
+            <!--/.col-->            
+          </div>
+          <!--/.row-->
+
+
+      </div>
+      <!-- /.conainer-fluid -->
+    </main>
+
+  <%- include ../partials/_footer.ejs %>

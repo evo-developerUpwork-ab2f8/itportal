@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="It Portal">
+  <meta name="author" content="openduty">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <%- include ../partials/_css.ejs %>
+</head>
+
+  <%- include ../partials/_header.ejs %>
+  <%- include ../partials/_sidebar.ejs %>
+
+<!-- Main content -->
+    <main class="main">
+      <div class="container-fluid">
+        <div class="col-sm-6">
+          <h1>Create Purchase Order</h1>
+          <form action="/documents/purchaseorder/add" method="post">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="name" class="col-form-label">Company</label>
+                <input type="text" class="form-control" id="name" placeholder="Company" name="company">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4" class="col-form-label">Department</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="department" name="department">
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <label for="title" class="col-form-label">Number</label>
+              <input type="text" class="form-control" id="title" name="purchase_order_number">
+            </div>
+            <div class="form-group">
+              <label for="description" class="col-form-label">Description</label>
+              <input type="text" class="form-control" id="description" name="description">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-9">
+                <label for="category" class="col-form-label">Category</label>
+                <select id="inputCategory" class="form-control" name="category">
+                  <option value="support">Support</option>
+                  <option value="hardware">Hardware</option>
+                  <option value="software">Software</option>
+                  <option value="newstart">New start</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+      <!-- /.conainer-fluid -->
+    </main>
+
+  <%- include ../partials/_footer.ejs %>
