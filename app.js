@@ -8,7 +8,11 @@ const mongoose = require('mongoose');
 const promisify = require('es6-promisify');
 const database = require('./config/database.js');
 
-const routes = require('./routes/index');
+const mainRoutes = require('./routes/index');
+const documents = require('./routes/documents');
+const inventory = require('./routes/inventory');
+const support = require('./routes/support');
+
 
 const app = express();
 
@@ -30,8 +34,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-
+app.use('/', mainRoutes);
+app.use('/documents', documents);
+app.use('/inventory', inventory);
+app.use('/support', support);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
