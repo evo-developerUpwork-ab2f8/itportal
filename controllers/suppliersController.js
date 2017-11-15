@@ -8,6 +8,11 @@ exports.suppliersList = (req, res, next) => {
     .catch(err => next(err));
 };
 
+// get add supplier form page
+exports.getAddSupplier = (req, res, next) => {
+  res.render('addSupplier');
+};
+
 exports.addSupplier = (req, res, next) => {
   const {
     name, address,
@@ -28,7 +33,7 @@ exports.addSupplier = (req, res, next) => {
     email, url,
     notes, img
   }).then(supplier => {
-    res.redirect(`/supplier/${supplier._id}`);
+    res.redirect(supplier.supplier_url);
   })
     .catch(err => next(err));
 }

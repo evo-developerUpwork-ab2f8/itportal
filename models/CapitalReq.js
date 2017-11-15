@@ -49,4 +49,8 @@ const capitalReqSchema = new Schema({
   }
 });
 
+capitalReqSchema.virtual('url').get(function(){
+  return '/documents/purchaserequest/' + this._id;
+});
+
 module.exports = mongoose.model('capex', capitalReqSchema);

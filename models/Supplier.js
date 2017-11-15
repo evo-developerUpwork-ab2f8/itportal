@@ -43,4 +43,8 @@ const supplierSchema = new Schema({
   }
 });
 
+supplierSchema.virtual('supplier_url').get(function(){
+  return '/inventory/supplier/' + this._id;
+});
+
 module.exports = mongoose.model('supplier', supplierSchema);

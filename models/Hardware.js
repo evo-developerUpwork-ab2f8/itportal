@@ -58,4 +58,8 @@ const hardwareSchema = new Schema({
   }
 });
 
+hardwareSchema.virtual('url').get(function(){
+  return '/inventory/hardware/' + this._id;
+});
+
 module.exports = mongoose.model('hardware', hardwareSchema);

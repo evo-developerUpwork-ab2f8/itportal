@@ -1,8 +1,12 @@
 const Software = require('../models/Software');
 const Hardware = require('../models/Hardware');
 
-exports.inventoryhomePage = (req, res) => {
-  res.render('inventory');
+exports.inventoryhomePage = (req, res, next) => {
+  Promise.all([Hardware.find({}), Software.find({})])
+    .then(result => {
+      res.render('inventory', {hardware: result[0], software: result[1]});
+    })
+    .catch(err => next(err))
 };
 
 
@@ -14,6 +18,12 @@ exports.softwareList = async (req, res, next) => {
   res.render('software', {software});
 };
 
+// get the add licence form page
+exports.getAddSoftwareLicence = (req, res, next) => {
+  res.render('addLicence');
+};
+
+// add the software licence to the db
 exports.addSoftwareLicence = (req, res, next) => {
   const {
     software_name, manufacturer,
@@ -26,7 +36,7 @@ exports.addSoftwareLicence = (req, res, next) => {
     depreciation, maintained, notes
   } = req.body;
 
-  SoftwareLicence.create({
+  Software.create({
     software_name, manufacturer,
     product_key, seats,
     company, licenced_to_name,
@@ -37,12 +47,12 @@ exports.addSoftwareLicence = (req, res, next) => {
     purchase_order_number,
     depreciation, maintained, notes
   })
-    .then((licence) => res.redirect(`/inventory/softwarelicence/${licence._id}`))
+    .then((licence) => res.redirect(licence.url))
     .catch(err => next(err));
 };
 
 exports.softwareLicencePage = (req, res, next) => {
-  SoftwareLicence.findById(req.params.id)
+  Software.findById(req.params.id)
     .then(licence => {
       res.render('softwareLicence', {licence});
     })
@@ -61,6 +71,11 @@ exports.hardwareItemsList = (req, res, next) => {
     })
     .catch(err => next(err));
 
+};
+
+// get the add hardware form Page
+exports.getAddHardware = (req, res, next) => {
+  res.render('addHardware');
 };
 
 exports.addHardware = (req, res, next) => {
@@ -89,7 +104,7 @@ exports.addHardware = (req, res, next) => {
     warranty, notes, img,
     default_location, requestable
   })
-    .then(hardware => res.redirect(`/inventory/hardware/${hardware._id}`))
+    .then(hardware => res.redirect(hardware.url))
     .catch(err => next(err));
 };
 

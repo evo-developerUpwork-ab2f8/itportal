@@ -57,4 +57,8 @@ const poSchema = new Schema({
   }
 });
 
+poSchema.virtual('url').get(function(){
+  return '/documents/purchaseorder/' + this._id;
+});
+
 module.exports = mongoose.model('po', poSchema);
