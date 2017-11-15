@@ -37,5 +37,8 @@ router.get('/support', supportController.getTickets);
 router.get('/editTicket', supportController.editTickets);
 
 router.get('/directory', directoryController.directoryhomePage);
+router.get('/directory/people', directoryController.peoplePage);
+
+
 
 module.exports = router;
