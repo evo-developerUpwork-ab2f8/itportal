@@ -3,7 +3,6 @@ const router = express.Router();
 
 const mainController = require('../controllers/mainController');
 const directoryController = require('../controllers/directoryController');
-const suppliersController = require('../controllers/suppliersController');
 
 /* GET home page. */
 router.get('/', mainController.dashPage);
