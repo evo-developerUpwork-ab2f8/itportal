@@ -2,7 +2,7 @@ const Software = require('../models/Software');
 const Hardware = require('../models/Hardware');
 
 exports.inventoryhomePage = (req, res) => {
-  res.render('inventory');
+  res.render('inventory/inventory');
 };
 
 

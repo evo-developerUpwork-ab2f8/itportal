@@ -11,10 +11,6 @@ const documentController = require('../controllers/documentController');
 /* GET home page. */
 
 router.get('/', mainController.dashPage);
-router.get('/request', mainController.requestPage);
-router.post('/request', supportController.createTickets);
-
-router.get('/inventory', inventoryController.inventoryhomePage);
 
 
 
@@ -27,16 +23,16 @@ router.get('/inventory/softwarelicence/:id', inventoryController.softwareLicence
 
 
 // get hardware Items page
+router.get('/inventory', inventoryController.inventoryhomePage);
 router.get('/inventory/hardware', inventoryController.hardwareItemsList);
-
-// add new hardware
 router.post('/inventory/hardware/add', inventoryController.addHardware);
-// display the hardware item page
 router.get('/inventory/hardware/:id', inventoryController.hardwareItemPage);
 
 //router.get('/support', supportController.supporthomePage);
 router.get('/support', supportController.getTickets);
-router.get('/editTicket', supportController.editTickets);
+router.get('/support/editTicket', supportController.editTicket);
+router.get('/support/createticket', supportController.viewCreateTicket);
+router.post('/support/createticket', supportController.createTicket);
 
 router.get('/directory', directoryController.directoryhomePage);
 
