@@ -57,4 +57,8 @@ const softwareSchema = new mongoose.Schema ({
   }
 });
 
+softwareSchema.virtual('url').get(function(){
+  return '/inventory/software/' + this._id;
+});
+
 module.exports = mongoose.model('software', softwareSchema);

@@ -22,7 +22,7 @@
       <ul>
         <% suppliers.forEach(function(val){ %>
           <li>
-            <a href='/supplier/<%=val._id%>'><%= val.name %></a>
+            <a href=<%=val.supplier_url%>><%= val.name %></a>
           </li><hr />
         <%})%>
       </ul>
