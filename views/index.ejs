@@ -89,75 +89,38 @@
                 </div>
                 <div class="card-body">
                   <div class="card-body">
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Summary</th>
-                <th>Created by</th>
-                <th>Due date</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><a href="#">9999</a></td>
-                <td>Sed ut perspiciatis unde omnis iste natus error sit...</td>
-                <td><a href="#">Colin Whitten</a></td>
-                <td>2012/01/01</td>
-                <td>
-                  <span class="badge badge-success">Active</span>
-                </td>
-              </tr>
-              <tr>
-                <td><a href="#">9999</a></td>
-                <td>Sed ut perspiciatis unde omnis iste natus error sit...</td>
-                <td><a href="#">Sookyen Lau</a></td>
-                <td>2012/02/01</td>
-                <td>
-                  <span class="badge badge-danger">Banned</span>
-                </td>
-              </tr>
-              <tr>
-                <td><a href="#">9999</a></td>
-                <td>Sed ut perspiciatis unde omnis iste natus error sit...</td>
-                <td><a href="#">Admin</a></td>
-                <td>2012/02/01</td>
-                <td>
-                  <span class="badge badge-secondary">Inactive</span>
-                </td>
-              </tr>
-              <tr>
-                <td><a href="#">9999</a></td>
-                <td>Sed ut perspiciatis unde omnis iste natus error sit...</td>
-                <td><a href="#">Colin Whitten</a></td>
-                <td>2012/03/01</td>
-                <td>
-                  <span class="badge badge-warning">Pending</span>
-                </td>
-              </tr>
-              <tr>
-                <td><a href="#">9999</a></td>
-                <td>Sed ut perspiciatis unde omnis iste natus error sit...</td>
-                <td><a href="#">Sookyen Lau</a></td>
-                <td>2012/01/21</td>
-                <td>
-                  <span class="badge badge-success">Active</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </div>
+                    <table class="table table-sm">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Summary</th>
+                          <th>Created by</th>
+                          <th>Due date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <% for (i in tickets) { %>
+                        <tr>
+                          <td>1</a></td>
+                          <td><%= tickets[i].description %></a></td>
+                          <td><%= tickets[i].name %></a></td>
+                          <td>10/11/2017</a></td>
+                          <td><%= tickets[i].status %></a></td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                      <li class="page-item active">
+                        <a class="page-link" href="/support/?page=<%= page %>">1</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">4</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
